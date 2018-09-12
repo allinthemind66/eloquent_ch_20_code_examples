@@ -73,3 +73,21 @@ methods.DELETE = async function(request){
   else await unlink(path);
   return {status: 204}
 };
+
+const {createWriteStream} = require('fs');
+
+
+function pipeStream(from, to) {
+  return new Promise((resolve, reject) => {
+    from.on("error", reject);
+    to.on("error", reject);
+    to.on("finish", resolve);
+    from.pipe(to);
+  });
+}
+
+methods.PUT = async function(request) {
+  let path = urlPath(request.url);
+  await pipeStream(request, createWriteStream(path));
+  return {status: 404};
+}
