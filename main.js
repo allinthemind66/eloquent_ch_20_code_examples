@@ -24,3 +24,20 @@ let server = createServer((request, response) => {
 });
 server.listen(8000);
 console.log("Listening! (port 8000)");
+
+
+
+
+//can also have a response.write method if its a post method
+//can also just load node-fetch module for cleaner interface
+const {request} = require("http");
+let requestStream = request({
+  hostname: "eloquentjavascript.net",
+  path: "/20_node.html",
+  method: "GET",
+  headers: {Accept: "text/html"}
+}, response => {
+  console.log("The response is ",
+              response);
+});
+requestStream.end();
