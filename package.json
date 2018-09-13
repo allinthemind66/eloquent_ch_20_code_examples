@@ -1,8 +1,17 @@
 {
   "name": "eloquent_ch_20_code_examples",
   "version": "1.0.0",
-  "description": "A simple web server from Eloquent JS Chapter 20.",
+  "description": "EJS CH 20",
   "main": "index.js",
+  "dependencies": {
+    "async": "^2.6.1",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.0",
+    "mime": "^2.3.1",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/allinthemind66/eloquent_ch_20_code_examples.git"
   },
-  "author": "Rick",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/allinthemind66/eloquent_ch_20_code_examples/issues"
